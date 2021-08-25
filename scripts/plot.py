@@ -15,6 +15,7 @@ def plot_corr(data:pd.DataFrame)->None:
     corr = data.corr()
     plt.figure(figsize=(20,20))
     sns.heatmap(corr, cbar=True, square= True, fmt='.1f', annot=True, annot_kws={'size':15}, cmap='summer_r')
+    plt.savefig("../figures/correlation.png")
     plt.show()
 
 #Scatter plot
