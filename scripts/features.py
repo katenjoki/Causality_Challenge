@@ -5,8 +5,7 @@ from sklearn.preprocessing import StandardScaler
 
 #prepare data for modelling
 def feature_scaling(data:pd.DataFrame,col1:str):
-    le = LabelEncoder()
-    data[col1] = le.fit_transform(data[col1])
+    data[col1].replace(to_replace = dict(M = 0, B = 1), inplace = True)
     
     cols = data.columns.to_list()
     if col1 in cols:
